@@ -1,0 +1,117 @@
+umask 002
+#EXPORTING SETTING ##########################################################
+export PYTHONPATH=$PYTHONPATH:$MY_PROJECT/bin/pythonScripts
+export MAYA_PRESET_PATH=$MAYA_PRESET_PATH:$MY_PROJECT/maya/presets
+
+
+anim(){
+ VAR=$1
+ echo "Going to animation$1 folder."
+ cd /u/projects/siphon_c414/assets/shots/shot${VAR}/animation/shot${VAR}_animation/	
+}
+
+fx(){
+ VAR=$1
+ echo "Going to fx$1 folder."
+ cd /u/projects/siphon_c414/assets/shots/shot${VAR}/fx/shot${VAR}_fx/	
+}
+
+lgt(){
+ VAR=$1
+ echo "Going to lighting$1 folder."
+ cd /u/projects/siphon_c414/assets/shots/shot${VAR}/lighting/shot${VAR}_lighting/	
+}
+
+#ALIASES
+	#Aliases for commonly used sites.
+alias box="firefox -new-window https://app.box.com/files/0/f/1902713219/Team_Siphon"
+
+	#Aliases for help document.
+alias phelp="gedit /u/projects/siphon_c414/help/pipeline_insructions.txt"
+alias comment="gedit /u/projects/siphon_c414/help/pipeline_comments.txt"
+
+	#Alias to go to script file.
+alias script="cd /u/projects/siphon_c414/bin"
+alias py="cd /u/projects/siphon_c414/bin/pythonScripts"
+alias envr="gedit /u/projects/siphon_c414/env/custom.bashrc"
+
+
+	#Aliases for traversing assets.
+alias misc="cd /u/projects/siphon_c414/assets/misc"
+alias mdl="cd /u/projects/siphon_c414/assets/models"
+alias ri="cd /u/projects/siphon_c414/assets/rigs"
+alias sd="cd /u/projects/siphon_c414/assets/setdress"
+alias shot="cd /u/projects/siphon_c414/assets/shots"
+alias sk="cd /u/projects/siphon_c414/assets/skinning"
+alias tex="cd /u/projects/siphon_c414/assets/textures"
+
+	#Alias to run maya
+alias m="run-maya"
+	#Alias to run houdini.
+alias hdni="run-houdini"
+
+	#Alias for mass publising by asset directory.
+alias mp="masspublish.sh"
+alias work="work.sh"
+
+
+
+
+#dontUse='Command not approved for current pipeline'
+#alias mkasset='echo -e  "$FG_RED$dontUse. Use the $FG_BLUE newasset $FG_RED command.$NORMAL"'
+#alias mkshot='echo -e  "$FG_RED$dontUse. Use the $FG_BLUE newshot $FG_RED command.$NORMAL"'
+#alias publish='echo -e  "$FG_RED$dontUse. Use the $FG_BLUE pub $FG_RED command.$NORMAL"'
+#alias a='echo -e  "$FG_RED$dontUse. Use the $FG_BLUE asset $FG_RED command.$NORMAL"'
+#alias s='echo -e  "$FG_RED$dontUse. Use the $FG_BLUE shot $FG_RED command.$NORMAL"'
+
+############################################################################
+#NAMES######################################################################
+name=unknown
+
+sourabhId=ssb9742
+yomiId=oaa1128
+malloryId=mcs9962
+osaId=ojo8121
+chelseyId=chg2290
+daneId=dps2762
+############################################################################
+#LOGIN######################################################################
+login=`echo $(whoami)`
+if [ $login == $sourabhId ]
+then
+   name=Sourabh
+elif [ $login == $yomiId ]
+then
+   name=Yomi
+elif [ $login == $malloryId ]
+then
+   name=Mallory
+elif [ $login == $osaId ]
+then
+   name=Osa
+elif [ $login == $chelseyId ]
+then
+   name=Chelsey
+elif [ $login == $daneId ]
+then
+   name=Dane
+else
+   name=unknown
+fi
+###########################################################################
+###########################################################################
+#GREETING##################################################################
+cat /u/projects/siphon_c414/env/vacuum.txt
+
+echo -e "$FG_GREEN Welcome to the Team Siphon pipeline. Don't tell us we suck, $NORMAL"$name"$FG_GREEN!\n$NORMAL"
+
+
+
+
+
+
+
+
+
+
+
